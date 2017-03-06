@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import arm.davsoft.staffmanager.components.TagBar?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox fx:id="rootContainer" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="500.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="arm.davsoft.staffmanager.controllers.PersonalDataController">
+    <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+            <children>
+                <AnchorPane>
+                    <children>
+                        <ImageView fx:id="img_avatar" fitHeight="150.0" fitWidth="135.0" pickOnBounds="true"
+                                   preserveRatio="true" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                        <Button fx:id="btn_browseAvatar" maxHeight="-Infinity" maxWidth="1.7976931348623157E308"
+                                minHeight="-Infinity" mnemonicParsing="false" onAction="#browseAvatar"
+                                text="Browse image" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                AnchorPane.rightAnchor="0.0"/>
+                    </children>
+                </AnchorPane>
+                <VBox maxWidth="-Infinity" prefHeight="200.0" spacing="9.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <TextField fx:id="txtField_firstName" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="FIRST NAME"/>
+                                <TextField fx:id="txtField_secondName" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="SECOND NAME"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <TextField fx:id="txtField_middleName" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="MIDDLE NAME"/>
+                                <ComboBox fx:id="combo_gender" maxWidth="-Infinity" minWidth="-Infinity"
+                                          prefWidth="200.0" promptText="GENDER" HBox.hgrow="NEVER"/>
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="200.0" spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <DatePicker fx:id="date_birthDate" maxWidth="-Infinity" minWidth="-Infinity"
+                                            prefWidth="200.0" promptText="BIRTH DATE" HBox.hgrow="NEVER"/>
+                                <TextField fx:id="txtField_birthPlace" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="BIRTH PLACE"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <TextField fx:id="txtField_nationality" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="NATIONALITY"/>
+                                <TextField fx:id="txtField_passport" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="PASSPORT"/>
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="200.0" spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <TextField fx:id="txtField_regAddress" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="REGISTRATION ADDRES"/>
+                                <TextField fx:id="txtField_resAddress" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="RESIDENTAL ADDRESS"/>
+                            </children>
+                        </HBox>
+                        <HBox spacing="5.0" VBox.vgrow="NEVER">
+                            <children>
+                                <TextField fx:id="txtField_email" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="EMAIL"/>
+                                <TextField fx:id="txtField_phone" maxWidth="-Infinity" minWidth="-Infinity"
+                                           prefWidth="200.0" promptText="PHONE"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </HBox>
+        <VBox>
+            <Label text="Attachments:"/>
+            <HBox maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0"
+                  prefWidth="200.0" VBox.vgrow="ALWAYS">
+                <children>
+                    <ListView fx:id="attachmentListView" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                    <ToolBar fx:id="attachmentToolBar" orientation="VERTICAL">
+                        <items>
+                            <Button fx:id="btn_addAttachment" onAction="#addAttachment" maxHeight="-Infinity"
+                                    maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                    mnemonicParsing="false"
+                                    prefHeight="26.0" prefWidth="26.0" styleClass="no-border, icn-add"/>
+                            <Button fx:id="btn_removeAttachment" onAction="#removeAttachment" maxHeight="-Infinity"
+                                    maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                                    mnemonicParsing="false"
+                                    prefHeight="26.0" prefWidth="26.0" styleClass="no-border, icn-remove"/>
+                        </items>
+                    </ToolBar>
+                </children>
+            </HBox>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+        <VBox>
+            <Label text="Participations:"/>
+            <ScrollPane maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" fitToWidth="true">
+                <content>
+                    <TagBar fx:id="participationTagBar"/>
+                </content>
+            </ScrollPane>
+            <HBox maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0"
+                  spacing="5.0" VBox.vgrow="ALWAYS">
+                <children>
+                    <ComboBox fx:id="combo_participation" maxWidth="-Infinity" minWidth="-Infinity"
+                              prefWidth="200.0" promptText="PARTICIPATION" HBox.hgrow="NEVER"/>
+                    <Button fx:id="btn_addParticipation" onAction="#addParticipation" maxHeight="-Infinity"
+                            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                            prefHeight="26.0" styleClass="icn-add" text="Add"/>
+                </children>
+                <VBox.margin>
+                    <Insets top="2.5"/>
+                </VBox.margin>
+            </HBox>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </VBox>
+
+        <Region maxHeight="Infinity" prefHeight="-Infinity" prefWidth="-Infinity" VBox.vgrow="ALWAYS" />
+        <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0">
+            <items>
+                <Button fx:id="btn_cancel" mnemonicParsing="false" onAction="#cancelAction" text="Cancel"/>
+                <Button fx:id="btn_ok" mnemonicParsing="false" onAction="#okAction" text="Ok"/>
+            </items>
+        </ToolBar>
+    </children>
+</VBox>

@@ -1,0 +1,335 @@
+/*@import url("/css/modena.css");*/
+
+#rootContainer {
+    -fx-border-color: #000;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-color: rgba(200, 200, 255, 0.2);
+    -fx-font-size: 12px;
+    /*-fx-background-image: url("/images/app-bg.png");*/
+}
+.progress-bar.white {
+    -fx-accent: #FFF;
+    -fx-border-color: -fx-accent;
+}
+
+.progress-bar.dark {
+    -fx-accent: #888;
+    -fx-border-color: -fx-accent;
+    -fx-border-radius: 25%;
+    -fx-pref-height: 8px;
+    -fx-background-radius: 25%;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+#mainToolBar {
+    -fx-padding: 10px;
+    -fx-background-image: url("/images/icons/dialog/top-bar.png");
+    -fx-background-size: cover;
+    -fx-background-position: left top;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-height: 15px;
+}
+#mainToolBar .label.titleText {
+    -fx-text-fill: #FFF;
+}
+#window_close {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("/images/icons/dialog/window-close.png");
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 6 6 4 6;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+#window_min {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("/images/icons/dialog/window-min.png");
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 6 6 4 6;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+#window_max {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("/images/icons/dialog/window-expand.png");
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 6 6 4 6;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+#window_close:hover {
+    -fx-background-image: url("/images/icons/dialog/window-close-over.png");
+    -fx-background-repeat: no-repeat;
+}
+#window_min:hover {
+    -fx-background-image: url("/images/icons/dialog/window-min-over.png");
+    -fx-background-repeat: no-repeat;
+}
+#window_max:hover {
+    -fx-background-image: url("/images/icons/dialog/window-expand-over.png");
+    -fx-background-repeat: no-repeat;
+}
+#window_close:focused, #window_min:focused , #window_max:focused {
+    -fx-effect: null;
+    /*-fx-effect: dropshadow( three-pass-box , -fx-focus-color , 5, 0.7 , 0 , 0 );*/
+}
+.tool-bar.settingsToolBar {
+    -fx-background-color: #EFEFF0;
+}
+.myTree .tree-cell {
+    -fx-background-color: #EFEFF0;
+    -fx-border-color: transparent;
+}
+
+.titled-pane:focused > .title > .arrow-button > .arrow {
+    -fx-background-color: -fx-focus-color, -fx-mark-color;
+    -fx-background-insets: 0, 0;
+    -fx-effect: none;
+}
+
+.progress-bar {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ProgressBarSkin";
+    -fx-border-style: solid;
+    -fx-border-color: -fx-accent;
+    -fx-border-radius: 5px;
+    -fx-padding: 1px;
+    -fx-pref-height: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1;
+    -fx-indeterminate-bar-length: 60;
+    -fx-indeterminate-bar-escape: true;
+    -fx-indeterminate-bar-flip: true;
+    -fx-indeterminate-bar-animation-time: 2;
+}
+.progress-bar > .bar {
+    -fx-background-color: -fx-box-border, linear-gradient(to bottom, derive(-fx-accent,95%), derive(-fx-accent,10%)), linear-gradient(to bottom, derive(-fx-accent,38%), -fx-accent);
+    -fx-background-insets: 0;
+    -fx-padding: 0.1em;
+}
+.progress-bar:indeterminate > .bar {
+    -fx-background-color: linear-gradient(to left, transparent, -fx-accent);
+}
+.progress-bar > .track {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0, 1;
+}
+
+.dialog-pane > .button-bar > .container > .details-button.more {
+    -fx-graphic: url("/images/icons/dialog/dialog-more-details.png");
+}
+
+.dialog-pane > .button-bar > .container > .details-button.less {
+    -fx-graphic: url("/images/icons/dialog/dialog-fewer-details.png");
+}
+
+.alert.confirmation.dialog-pane,
+.text-input-dialog.dialog-pane,
+.choice-dialog.dialog-pane {
+    -fx-graphic: url("/images/icons/dialog/dialog-confirm.png");
+}
+
+.alert.information.dialog-pane {
+    -fx-graphic: url("/images/icons/dialog/dialog-information.png");
+}
+
+.alert.error.dialog-pane {
+    -fx-graphic: url("/images/icons/dialog/dialog-error.png");
+}
+
+.alert.warning.dialog-pane {
+    -fx-graphic: url("/images/icons/dialog/dialog-warning.png");
+}
+
+
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Root					 				                       				   *
+ *                                                                             *
+ ******************************************************************************/
+.root {
+    /* Swatch Colors - Blue*/
+    -swatch-100: #BBDEFB;
+    -swatch-200: #90CAF9;
+    -swatch-300: #64BEF6;
+    -swatch-400: #42A5F5;
+    -swatch-500: #2196F3;
+    -fx-text-base-color: rgb(100.0, 100.0, 100.0);
+    /* Text defaults */
+    -fx-font-family: 'Roboto Medium';
+    -fx-font-size: 12px;
+    -fx-disabled-opacity: 0.6;
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * CheckBox -> Material ToggleSwitch                                           *
+ *                                                                             *
+ ******************************************************************************/
+
+.check-box-toggle-switch>*.box{
+    -fx-background-color: rgb(200.0, 200.0, 200.0);
+    -fx-pref-height: 20;
+    -fx-pref-width: 40;
+    -fx-background-radius: 100; /* Full round corner */
+    -fx-background-insets: 2.5;
+    -fx-padding:0;
+}
+.check-box-toggle-switch:selected>*.box{
+    -fx-background-color: derive(-swatch-500, 0.54);
+}
+
+.check-box-toggle-switch:disabled>*.box{
+    -fx-background-color: derive(grey, 0.54);
+}
+
+
+.check-box-toggle-switch >*.box>*.mark {
+    -fx-background-color: white;
+    -fx-padding:0;
+    -fx-background-insets: 0;
+    -fx-shape: "M 10.5,0 C 4.7010101,0 0,4.7010101 0,10.5 0,16.29899 4.7010101,21 10.5,21 16.29899,21 21,16.29899 21,10.5 21,4.7010101 16.29899,0 10.5,0 Z m 29.455078,10.6875 0,0.134766 0.08984,0 0,-0.134766 z";
+    -fx-effect: dropshadow(gaussian, rgba(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,1.5);
+}
+
+.check-box-toggle-switch:selected>*.box>*.mark {
+    -fx-background-color: -swatch-500;
+    -fx-shape: "M 10,5 c 5.79899,0 10.5,4.701 10.5,10.5 0,5.799 -4.70101,10.5 -10.5,10.5 -5.79899,0 -10.5,-4.701 -10.5,-10.5 0,-5.799 4.70101,-10.5 10.5,-10.5 z m -29.455078,10.6875 0,0.1348 -0.08984,0 0,-0.1348 z";
+}
+
+.check-box-toggle-switch:indeterminate>*.box>*.mark {
+    -fx-background-color: white;
+    -fx-shape: "M 20 0 C 14.20101 0 9.5 4.701 9.5 10.5 C 9.5 16.299 14.20101 21 20 21 C 25.79899 21 30.5 16.299 30.5 10.5 C 30.5 4.701 25.79899 0 20 0 z M 0 10.6875 L 0 10.822266 L 0.08984375 10.822266 L 0.08984375 10.6875 L 0 10.6875 z M 40.066406 10.900391 A 0.080000006 0.050000001 0 0 0 40 10.949219 A 0.080000006 0.050000001 0 0 0 40.080078 11 A 0.080000006 0.050000001 0 0 0 40.160156 10.949219 A 0.080000006 0.050000001 0 0 0 40.080078 10.900391 A 0.080000006 0.050000001 0 0 0 40.066406 10.900391 z ";
+}
+
+.check-box-toggle-switch:disabled>*.box>*.mark {
+    -fx-background-color: grey;
+}
+
+.status-bar {
+    -fx-border-color: #CCC;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+.label.warning {
+    /*-fx-border-color: #FFAA00;*/
+    -fx-border-color: rgba(255, 200, 0, 0.5);
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-padding: 3px 3px 3px 20px;
+    -fx-font-size: 12px;
+    -fx-background-color: rgba(255, 180, 0, 0.2);
+    -fx-background-image: url("/images/icons/general/balloonWarning.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 3px center;
+}
+
+.text-field.search {
+    -fx-background-image: url("../images/icons/general/filter.png");
+    -fx-background-position: 5px center;
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 5 5 5 26;
+}
+
+.button.icn-close-popup {
+    -fx-graphic: url("../images/icons/windows/close.png");
+}
+
+.button.icn-add {
+    -fx-graphic: url("../images/icons/general/add.png");
+}
+
+.button.icn-edit {
+    -fx-graphic: url("../images/icons/general/edit.png");
+}
+
+.button.icn-remove {
+    -fx-graphic: url("../images/icons/general/remove.png");
+}
+
+.button.icn-refresh {
+    -fx-graphic: url("../images/icons/general/refresh.png");
+}
+
+.button.icn-login {
+    -fx-graphic: url("../images/icons/general/lock.png");
+}
+
+.button.icn-logout {
+    -fx-graphic: url("../images/icons/general/lock.png");
+}
+
+.button.icn-prev {
+    -fx-graphic: url("../images/icons/general/back.png");
+}
+
+.button.icn-next {
+    -fx-graphic: url("/images/icons/general/forward.png");
+}
+
+.button.icn-exit {
+    -fx-graphic: url("/images/icons/general/exit.png");
+}
+
+.button.no-border {
+    -fx-background-color: null;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: transparent;
+}
+
+.button.no-border:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.15);
+    -fx-border-color: #000;
+    -fx-border-radius: 3px;
+    -fx-border-color: rgba(0, 0, 0, 0.5);
+}
+
+.button.no-border:pressed {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tag {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-color: rgba(0, 0, 0, 0.6);
+    -fx-padding: 10px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+    -fx-pref-height: 30px;
+    -fx-min-height: 30px;
+    -fx-max-height: 30px;
+}
+
+.tag > .text {
+    -fx-fill: #CCC;
+}
+
+.tag > .icn-remove {
+    -fx-font-size: 1px;
+    -fx-background-color: null;
+    -fx-background-image: url("/images/icons/dialog/window-close.png");
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 6 6 4 6;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+    -fx-graphic: null;
+}
+
+.tag > .icn-remove:hover {
+    -fx-background-image: url("/images/icons/dialog/window-close-over.png");
+    -fx-background-repeat: no-repeat;
+}
+
+.tag > .icn-remove:focused {
+    -fx-effect: null;
+}

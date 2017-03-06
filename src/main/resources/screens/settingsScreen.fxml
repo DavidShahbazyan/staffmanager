@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <SplitPane dividerPositions="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane fx:id="toolBarContainer" minHeight="0.0" minWidth="100.0" prefWidth="150.0" maxWidth="200">
+                    <children>
+                    </children>
+                </AnchorPane>
+                <VBox minWidth="300.0">
+                    <children>
+                        <Label fx:id="breadCrumbs" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" styleClass="bold" text="Label" VBox.vgrow="NEVER">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </Label>
+                        <ScrollPane fx:id="scrollPane" focusTraversable="false" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                            </content>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0" VBox.vgrow="NEVER">
+            <buttons>
+                <Button fx:id="btnCancel" mnemonicParsing="false" styleClass="btnCancel" text="Cancel" />
+                <Button fx:id="btnOk" mnemonicParsing="false" styleClass="btnOk" text="Save" />
+            </buttons>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </ButtonBar>
+    </children>
+</VBox>

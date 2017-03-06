@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import arm.davsoft.staffmanager.components.TagBar?>
+<VBox fx:id="rootContainer" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="arm.davsoft.staffmanager.controllers.MainScreenController">
+    <children>
+        <MenuBar maxWidth="1.7976931348623157E308" VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="%label.menuItem.file">
+                    <items>
+                        <!--<MenuItem fx:id="appSettingsMenuItem" mnemonicParsing="false" onAction="#openAppSettings"-->
+                                  <!--text="%label.menuItem.file.settings">-->
+                            <!--<accelerator>-->
+                                <!--<KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP"-->
+                                                    <!--shortcut="UP"/>-->
+                            <!--</accelerator>-->
+                        <!--</MenuItem>-->
+                        <!--<SeparatorMenuItem mnemonicParsing="false"/>-->
+                        <MenuItem fx:id="signOutMenuItem" mnemonicParsing="false" onAction="#logOut" text="%label.button.sign.out"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem fx:id="appRestartMenuItem" mnemonicParsing="false" onAction="#restartApp"
+                                  text="%label.menuItem.file.restart">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP"
+                                                    shortcut="UP"/>
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="exitAppMenuItem" mnemonicParsing="false" onAction="#exitApp"
+                                  text="%label.menuItem.file.exit">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP"
+                                                    shortcut="UP"/>
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%label.menuItem.help">
+                    <items>
+                        <!--<MenuItem fx:id="submitIssueMenuItem" mnemonicParsing="false" onAction="#" text="%label.menuItem.help.submitAnIssue"/>-->
+                        <!--<SeparatorMenuItem mnemonicParsing="false"/>-->
+                        <MenuItem fx:id="aboutAppMenuItem" mnemonicParsing="false" onAction="#aboutApp"
+                                  text="%label.menuItem.help.about">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP"/>
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <HBox spacing="5.0">
+            <children>
+                <TextField fx:id="txt_search" promptText="Search"/>
+                <Button fx:id="btn_add" mnemonicParsing="false" onAction="#createNewPersonalData"
+                        styleClass="no-border, icn-add"/>
+                <Button fx:id="btn_edit" mnemonicParsing="false" onAction="#editPersonalData"
+                        styleClass="no-border, icn-edit"/>
+                <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#deletePersonalData"
+                        styleClass="no-border, icn-remove"/>
+                <Button fx:id="btn_refresh" mnemonicParsing="false" onAction="#refreshMembersListView"
+                        styleClass="no-border, icn-refresh"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btn_logout" mnemonicParsing="false" onAction="#logOut"
+                        styleClass="no-border, icn-logout"/>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </HBox>
+        <HBox spacing="5.0" VBox.vgrow="ALWAYS">
+            <children>
+                <ListView fx:id="membersListView" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0"
+                          prefWidth="350.0"/>
+                <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <TilePane prefColumns="2">
+                            <children>
+                                <HBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0" spacing="5.0">
+                                    <children>
+                                        <ImageView fx:id="img_avatar" fitHeight="150.0" fitWidth="135.0"
+                                                   pickOnBounds="true" preserveRatio="true"/>
+                                        <GridPane HBox.hgrow="ALWAYS">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                                <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="First Name:" GridPane.columnIndex="0"
+                                                       GridPane.rowIndex="0"/>
+                                                <Label fx:id="label_firstName" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                                <Label text="Second Name:" GridPane.columnIndex="0"
+                                                       GridPane.rowIndex="1"/>
+                                                <Label fx:id="label_secondName" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                <Label text="Middle Name:" GridPane.columnIndex="0"
+                                                       GridPane.rowIndex="2"/>
+                                                <Label fx:id="label_middleName" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                                <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                                <Label fx:id="label_gender" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                                <Label text="Born On:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                                <Label fx:id="label_birthDate" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                                <Label text="Born In:" GridPane.rowIndex="5"/>
+                                                <Label fx:id="label_birthPlace" text="N/A" wrapText="true"
+                                                       GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </HBox>
+                                <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="400.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                        <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Nationality:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                        <Label fx:id="label_nationality" text="N/A" wrapText="true"
+                                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <Label text="Reg. Address:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                        <Label fx:id="label_regAddress" text="N/A" wrapText="true"
+                                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <Label text="Res. Address:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                        <Label fx:id="label_resAddress" text="N/A" wrapText="true"
+                                               GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                        <Label fx:id="label_phone" text="N/A" wrapText="true" GridPane.columnIndex="1"
+                                               GridPane.rowIndex="4"/>
+                                        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                                        <Label fx:id="label_email" text="N/A" wrapText="true" GridPane.columnIndex="1"
+                                               GridPane.rowIndex="5"/>
+                                        <Label text="Passport:"/>
+                                        <Label fx:id="label_passport" text="N/A" wrapText="true"
+                                               GridPane.columnIndex="1"/>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </TilePane>
+                        <GridPane maxWidth="Infinity" minWidth="-Infinity" prefWidth="400.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="20.0" prefHeight="-Infinity" vgrow="ALWAYS"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Participations:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TagBar fx:id="participationTagBar" readOnly="true" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <Label text="Attachments:"/>
+                        <ListView fx:id="attachmentsListView" prefHeight="200.0" prefWidth="200.0"/>
+                        <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>
